@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/index.2e529fc4.css')}}">{% endblock %}
+    </head>
+    <body>
+        {% block body %}
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="display-5 mb-5 text-primary text-center">Gestion des restaurants <a href="/tbsaucemoutard"><img class="" src="{{asset('build/images/retour.png')}}"></a></p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 filter-fade-in filter-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="text-dark text-left">Restaurants </th>
+                <th class="text-dark text-right">identification</th>
+                <th class="text-dark text-right">Horaires</th>
+                <th class="text-dark text-right">Description</th>
+                <th class="text-dark text-right">Presences</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for lerestaurant in restaurants %}
+              <tr>
+                <td class="text-secondary text-dark text-left">{{ lerestaurant.raisonsociale }}</td>
+             
+                <td><a href="/gestionRestaurants/{{lerestaurant.id}}/edit"><img class="img-fluid d-block float-right" src="{{asset('build/images/crayon30.png')}}"></a></td>
+             
+                <td><a  href="/gestion1ListeHoraires/{{lerestaurant.id}}"><img class="img-fluid d-block float-right" src="{{asset('build/images/crayon30.png')}}"></a></td>
+             
+                <td><a  href="/gestion1ListeDescription/{{lerestaurant.id}}"><img class="img-fluid d-block float-right" src="{{asset('build/images/crayon30.png')}}"></a></td>
+             
+                <td><a  href=""><img class="img-fluid d-block float-right" src="{{asset('build/images/crayon30.png')}}"></a></td>
+             
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+            
+            
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
+{# empty Twig template #}

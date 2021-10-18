@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/tableau.67a0973b.css')}}">{% endblock %}
+    </head>
+
+{% block body %}
+<div class="py-5 text-center bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="pb-3 text-secondary">Tableau de bord du site Saucemoutard</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="text-right col-md-6">
+          <div class="row my-5">
+            <div class="col-2 order-lg-2 col-2 text-center">
+              <i class="d-block fa fa-columns fa-3x"></i>
+            </div>
+            <div class="col-10 text-lg-right text-left order-lg-1">
+                <h4 class="text-primary">Gestion des restaurants</h4>
+              <p>Cet espace permet de creer, mettre a jour les informations primaires d'un restaurant
+                  <a class="btn btn-outline-primary" href="/gestionRestaurants/0/edit" role="button">Ajout</a>
+                  <a class="btn btn-outline-secondary" href="/gestion1ListeRestaurants" role="button">Maj</a>
+                  <br> 
+              </p>
+            </div>
+          </div>
+          <div class="row my-5">
+            <div class="col-2 order-lg-2 col-2 text-center">
+              <i class="d-block fa fa-circle-thin fa-4x"></i>
+            </div>
+            <div class="col-10 text-lg-right text-left order-lg-1">
+                <h4 class="text-primary"> Gestion des descriptions des restaurants </h4>
+              <p>Cet espace &nbsp;permet de creer et mettre a jour les descriptions de vos restaurants 
+              <a class="btn btn-outline-primary" href="/gestionDescription/0/edit" role="button">Ajout</a>
+              
+              </p>
+            </div>
+          </div>
+          <div class="row my-5">
+            <div class="col-2 order-lg-2 col-2 text-center">
+              <i class="d-block fa  fa-comment-o fa-3x"></i>
+            </div>
+            <div class="col-10 text-lg-right text-left order-lg-1">
+              <h4 class="text-primary">Gestion du service SauceMoutard</h4>
+              <p>A venir</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-left col-md-6">
+          <div class="row my-5">
+            <div class="col-2 text-center">
+              <i class="d-block fa fa-battery-empty fa-3x" ></i>
+            </div>
+            <div class="col-10">
+                <h4 class="text-primary">Gestion des horaires &nbsp;des restaurants</h4>
+              <p>Cet espace vous permet de creer et mettre a jour les horaires d'ouverture de vos restaurants
+              <a class="btn btn-outline-primary" href="/gestionOuvrir/0/edit" role="button">Ajout</a>
+              
+              </p>
+            </div>
+          </div>
+          <div class="row my-5">
+            <div class="col-2 text-center">
+              <i class="d-block mx-auto fa  fa-clone fa-3x"></i>
+            </div>
+            <div class="col-10">
+                <h4 class="text-primary">Gestion des categories</h4>
+              <p>Cet espace vous permet de dreer et mettre a jour les categories de restaurants
+              <a class="btn btn-outline-primary" href="/gestionCategories/0/edit" role="button">Ajout</a>
+              <a class="btn btn-outline-secondary" href="/gestion1ListeCategories" role="button">Maj</a>
+              </p>
+            </div>
+          </div>
+          <div class="row my-5">
+            <div class="col-2 text-center">
+              <i class="d-block fa  fa-heart-o fa-3x"></i>
+            </div>
+            <div class="col-10">
+                <h4 class="text-primary"><a class="nav-link" href="inscription">Gestion des utilisateurs</a></h4>
+              <p>Cet espace vous permet de creer et mettre a jour les donnees utilisateurs
+              <a class="btn btn-outline-primary" href="" role="button">Ajout</a>
+              <a class="btn btn-outline-secondary" href="" role="button">Maj</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="{{asset('build/css/liste.afc1fc18.css')}}">
+  
+</head>
+<body>
+
+ <nav class="navbar  bg-primary fixed-top  m-0 py-0" >
+     <ul class="navbar-nav    text-primary ">
+                    <li class="nav-item text-center">
+                        <a  href="javascript:history.back()"><img src="{{asset('build/images/retour-blanc.png')}}"></a>
+                    </li>
+    </ul> 
+    <ul class="navbar-nav mx-auto  text-primary ">
+                    <li class="nav-item text-center">
+                        <a class="nav-link    bg-primary  text-secondary" href="/carte">SAUCE MOUTARD</a>
+                    </li>
+    </ul> 
+ 
+  </nav>
+     
+     <div class="py-5 text-center " >
+    <div class="container">
+
+      <div class="row">
+        {% for lacategorie in categories %}  
+        <div class="col-6">
+            <a  href="/detailRecherche/{{lacategorie.id}}"><img class="img-fluid  mx-auto" src="{{ lacategorie.logo }}"></a>
+          <p>
+            <b>{{ lacategorie.nom }}</b>
+            
+        </div>
+       {% endfor %}   
+      </div>
+    </div>
+  </div>
+
+<nav class="navbar navbar-expand   bg-light  ">
+    <div class="collapse navbar-collapse fixed-bottom " id="navbarSupportedContent">
+        
+            <div class="container">
+		<div class="row">
+        	<div class="text-right col-3 p-0"><img src="{{asset('build/images/bordg.png')}}"></div>
+        	<div class="bg-primary text-center col-2" >
+         		<a  href="/recherche"><img src="{{asset('build/images/loupe.png')}}"></a>
+           	</div>  
+          	<div class="bg-primary text-center col-2" >
+          		<a  href="/carte"><img src="{{asset('build/images/logocentre.png')}}"></a>
+        		</div> 
+        	<div class="bg-primary text-center col-2" >
+          		<a  href="/profil/{{app.user.id}}"><img src="{{asset('build/images/profil.png')}}"></a>
+  	 		</div> 
+                        <div class="text-left col-3 p-0"><img src="{{asset('build/images/bordd.png')}}"></div>
+         	</div>
+      	</div>
+      
+  	</div>
+</nav>
+  </body>
+
+</html>

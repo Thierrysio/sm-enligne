@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 31 juil. 2018, 09:28:04
+    Author     : thierry28220
+*/
+$theme-colors: (
+  primary: #FDD02F,
+  secondary: #ffffff,
+  light: #f3f3f3,
+  dark: #151515,
+  info: #ccc,
+  success: #28a745,
+  warning: #ffc107,
+  danger: #dc3545
+);
+
+
+$font-family-base:  'Oswald', sans-serif;
+
+.fixed-top{
+     top: 100;
+    background: transparent;
+   font-size: 50px;
+   color: #FDD02F;
+    font-family: 'Oswald', sans-serif;
+ 
+}
+@import '~bootstrap/scss/bootstrap';
+.fixed-bottom{
+    bottom: 0;
+    width: 100%;
+    background: none;
+     
+    border-radius: 10px;
+     
+     
+}
+
+.text-primary{
+    font-family: 'Oswald', sans-serif;
+    font-weight:bold;
+    font-size: 28px;
+}
+
+.text-secondary{
+     font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+}
+
+.btn-primary{
+    background: transparent;
+}
+
+#map {
+        height: 100%;
+        
+      }
+      
+ 
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    
+         
+         .footer {
+    position: absolute;
+    margin: auto;
+    bottom: 5;
+    width: 100%;
+    height: 40px;
+   
+}
+     
+        
+       

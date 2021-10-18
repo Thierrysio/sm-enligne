@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/creationRestaurant.66df981e.css')}}">{% endblock %}
+    </head>
+    <body>
+        {% form_theme form 'bootstrap_4_layout.html.twig' %}
+        {% block body %}
+         <div class="py-5 text-left bg-light">
+    <div class="container">   
+           <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="display-5 mb-5 text-primary text-center">Gestion des restaurants <a href="/tbsaucemoutard"><img class="" src="{{asset('build/images/retour.png')}}"></a></p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+        {{form_start(form)}}
+        {{form_widget(form)}}
+        <button type="submit" >ok</button>
+        {{form_end(form)}}
+        {{form_end(form)}}
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
+{# empty Twig template #}
+{# empty Twig template #}

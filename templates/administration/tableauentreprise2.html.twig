@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/index.css')}}">{% endblock %}
+{% block body %}
+  <div class="py-0">
+    <div class="container bg-primary">
+      <div class="row  text-center">
+          <div class="col-3 text-primary">Sauce Moutard Pro</div>
+        <div class="col-6"></div>
+        <div class="col-3 text-center text-primary">Retour à l'accueil</div>
+      </div>
+    </div>
+  </div>
+  <div class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center">Gestion des abonnements</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="py-2 text-center" >
+    <div class="container">
+      <div class="row">
+        <div class="col-12"><a href="#" class="btn btn-outline-primary">Ajout d'un utilisateur</a></div>
+      </div>
+    </div>
+  </div>
+  
+   <div class="py-5">
+    <div class="container">
+      <div class="row" >
+          <div class="col-12">
+              <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Dernière connexion</th>
+      <th scope="col">Supprimer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td><a href="/removeSalarie"><img class="img-fluid d-block float-right" src="{{asset('build/images/crayon30.png')}}"></a></td>         
+    </tr>
+    
+  </tbody>
+</table>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

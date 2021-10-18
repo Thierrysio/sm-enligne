@@ -1,0 +1,173 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+<link rel="stylesheet" href="{{asset('build/css/details.4388ac1e.css')}}">
+
+</head>
+
+<body>
+ <nav class="navbar  bg-primary fixed-top  m-0 py-0" >
+     <ul class="navbar-nav    text-primary ">
+                    <li class="nav-item text-center">
+                        <a  href="javascript:history.back()"><img src="{{asset('build/images/retour-blanc.png')}}"></a>
+                    </li>
+    </ul> 
+    <ul class="navbar-nav mx-auto  text-primary ">
+                    <li class="nav-item text-center">
+                        <a class="nav-link    bg-primary  text-secondary" href="/carte">{{restaurant.raisonsociale}}</a>
+                    </li>
+    </ul> 
+ 
+     
+  </nav>
+
+          <div class="py-0">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 m-0 p-0">
+          <img class="img-fluid d-block m-0 p-0" src="{{restaurant.image}}"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1 text-justify">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="text-dark">{{restaurant.infos}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+      <div class="py-1">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-primary">ADRESSE</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1 text-justify">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="text-dark">{{restaurant.adresse}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-primary">LES AVANTAGES</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1 text-justify">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="text-dark">{{restaurant.avantages}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-primary">DESCRIPTION</h1>
+          {% for description in restaurant.colldescription %}
+          <div class="row">
+            <div class="col-4">
+              <img class="img-fluid d-block" src="/build/images/{{description.getImage()}}" width="50" height="50"> </div>
+            <div class="col-8 align-self-center">
+              <p class="text-justify text-dark">{{description.getLibelle()}}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-primary">HORAIRES</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-0">
+    <div class="container-fluid">
+      {% for ouvrir in restaurant.collouvrir %}  
+      <div class="row">
+        <div class="col-md-8 col-4 text-dark">{{ouvrir.getIdJour().getJour()}}</div>
+        <div class="col-md-4 col-8 text-dark">: {{ouvrir.getHeureDebut()|date('H:i')}} - {{ouvrir.getHeureFin()|date('H:i')}}</div>
+      </div>
+      {% endfor %}  
+    </div>
+  </div>
+  <div class="py-3" >
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-primary">QUI Y TRAVAILLE ?</h1>
+        </div>         
+      </div>
+      <div class="row">
+            {% for present in restaurant.etrepresents %}
+                {% if (("now"|date('Y-m-d'))==(present.getDatepresence()|date('Y-m-d'))) %}  
+                    <div class="col-4">
+                     {% if (present.getUser().getPhoto() is not defined or present.getUser().getPhoto() is null) %}    
+                    <a class="nav-link mx-auto text-primary" href="/profil/{{present.getUser().getId()}}"><br><img class="rounded-circle" src="/build/images/photo05.png" width="100" height="100"></a>
+                    {% else %}
+                    <a class="nav-link mx-auto text-primary" href="/profil/{{present.getUser().getId()}}"><br><img class="rounded-circle" src="/build/images/{{present.getUser().getPhoto().getPhoto()}}" width="100" height="100"></a>
+                    
+                    {% endif %}
+                     </div>
+                {% endif %}
+            {% endfor %}
+          </div>
+          <p class="lead text-dark" >C'est tout pour l'instant... </p>
+
+    </div>
+  </div>
+        
+
+   <nav class="navbar navbar-expand   bg-light  ">
+    <div class="collapse navbar-collapse fixed-bottom " id="navbarSupportedContent">
+        
+            <div class="container">
+		<div class="row">
+        	<div class="text-right col-1 p-0"><img src="{{asset('build/images/bordg.png')}}"></div>
+                <div class="bg-primary text-center col-2" >
+          		
+  	 		</div> 
+        	  
+          	<div class="bg-primary text-center col-6" >
+          		<a class="nav-link text-secondary" href="/jyvais/{{restaurant.id}}">
+                            <img src="{{asset('build/images/courir.png')}}"></a>
+        		</div> 
+        	 
+                        <div class="text-left col-3 p-0"><img src="{{asset('build/images/bordd.png')}}"></div>
+         	</div>
+      	</div>
+      
+  	</div>
+</nav>
+    
+  		
+	 	 
+<script src="{{asset('build/js/app.js')}}"></script>
+
+</body>
+
+</html> 

@@ -1,0 +1,264 @@
+﻿-- phpMyAdmin SQL Dump
+-- version 4.7.9
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  sam. 15 sep. 2018 à 07:07
+-- Version du serveur :  5.7.21
+-- Version de PHP :  7.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données :  `sm`
+--
+CREATE DATABASE IF NOT EXISTS `sm` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `sm`;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `categories`
+--
+
+DROP TABLE IF EXISTS `categories`;
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `description`
+--
+
+DROP TABLE IF EXISTS `description`;
+CREATE TABLE IF NOT EXISTS `description` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `libelle` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `restaurant_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `IDX_6DE44026B1E7706E` (`restaurant_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `etrepresent`
+--
+
+DROP TABLE IF EXISTS `etrepresent`;
+CREATE TABLE IF NOT EXISTS `etrepresent` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `restaurant_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `datepresence` date NOT NULL,
+  `heuredebut` time NOT NULL,
+  `heurefin` time NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `IDX_93289A91B1E7706E` (`restaurant_id`),
+  KEY `IDX_93289A91A76ED395` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `jours`
+--
+
+DROP TABLE IF EXISTS `jours`;
+CREATE TABLE IF NOT EXISTS `jours` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `jour` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `jours`
+--
+
+INSERT INTO `jours` (`id`, `jour`) VALUES
+(1, 'dimanche'),
+(2, 'lundi'),
+(3, 'mardi'),
+(4, 'mercredi'),
+(5, 'jeudi'),
+(6, 'vendredi'),
+(7, 'samedi');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `migration_versions`
+--
+
+DROP TABLE IF EXISTS `migration_versions`;
+CREATE TABLE IF NOT EXISTS `migration_versions` (
+  `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `migration_versions`
+--
+
+INSERT INTO `migration_versions` (`version`) VALUES
+('20180806122448'),
+('20180808081004'),
+('20180808091337'),
+('20180809104720'),
+('20180809200423'),
+('20180809200949'),
+('20180811080742'),
+('20180830201206'),
+('20180831162825'),
+('20180831170554'),
+('20180831172241'),
+('20180831172439'),
+('20180831180522'),
+('20180901075351'),
+('20180901075803'),
+('20180901155912'),
+('20180901164157'),
+('20180914075021'),
+('20180914075548');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `ouvrir`
+--
+
+DROP TABLE IF EXISTS `ouvrir`;
+CREATE TABLE IF NOT EXISTS `ouvrir` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_restaurant_id` int(11) DEFAULT NULL,
+  `id_jour_id` int(11) DEFAULT NULL,
+  `heure_debut` time NOT NULL,
+  `heure_fin` time NOT NULL,
+  `ouvert` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `IDX_6A47F013FCFA10B` (`id_restaurant_id`),
+  KEY `IDX_6A47F013FC91C3A0` (`id_jour_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `restaurant`
+--
+
+DROP TABLE IF EXISTS `restaurant`;
+CREATE TABLE IF NOT EXISTS `restaurant` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `raisonsociale` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ville` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `longitude` double NOT NULL,
+  `latitude` double NOT NULL,
+  `infos` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `avantages` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `restaurant`
+--
+
+INSERT INTO `restaurant` (`id`, `raisonsociale`, `ville`, `longitude`, `latitude`, `infos`, `image`, `avantages`) VALUES
+(1, 'Bondi Beach', 'usa', -3, 48, 'Une fromagerie POP en plein PARIS.L\'équipe de BEAU & FORT tient sa promesse de proposer de bons produits dans un lieu magique et le tout dans une ambiance conviviale', '/build/images/I480.jpg', '10% de réduction de 14 h à 19 h du Lundi au Vendredi'),
+(2, 'succulentes', 'succulentes', -3, 48.35, 'Une fromagerie POP en plein PARIS.L\'équipe de BEAU & FORT tient sa promesse de proposer de bons produits dans un lieu magique et le tout dans une ambiance conviviale', '/build/images/I480.jpg', '10% de réduction de 14 h à 19 h du Lundi au Vendredi'),
+(3, '-', '-', -3, 49.23, 'Une fromagerie POP en plein PARIS.L\'équipe de BEAU & FORT tient sa promesse de proposer de bons produits dans un lieu magique et le tout dans une ambiance conviviale', '/build/images/I480.jpg', '10% de réduction de 14 h à 19 h du Lundi au Vendredi');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `restaurant_categories`
+--
+
+DROP TABLE IF EXISTS `restaurant_categories`;
+CREATE TABLE IF NOT EXISTS `restaurant_categories` (
+  `restaurant_id` int(11) NOT NULL,
+  `categories_id` int(11) NOT NULL,
+  PRIMARY KEY (`restaurant_id`,`categories_id`),
+  KEY `IDX_9FC96659B1E7706E` (`restaurant_id`),
+  KEY `IDX_9FC96659A21214B7` (`categories_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prenom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lieux` int(11) NOT NULL,
+  `points` int(11) NOT NULL,
+  `grade` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nepasderanger` tinyint(1) NOT NULL,
+  `fonction` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `username`, `password`, `photo`, `nom`, `prenom`, `lieux`, `points`, `grade`, `nepasderanger`, `fonction`) VALUES
+(5, 'qq', 'qq', '$2y$13$c0bujqtWxUcRPMXmWYugq.1MBY3zvd.sq5/8416awluNoKb9PmfXO', 'photo05.png', 'LE GALL', 'Quentin', 1000, 1000, 'Ambassadeur', 0, 'Fondateur @ Sauce Moutard');
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `description`
+--
+ALTER TABLE `description`
+  ADD CONSTRAINT `FK_6DE44026B1E7706E` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurant` (`id`);
+
+--
+-- Contraintes pour la table `etrepresent`
+--
+ALTER TABLE `etrepresent`
+  ADD CONSTRAINT `FK_93289A91A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `FK_93289A91B1E7706E` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurant` (`id`);
+
+--
+-- Contraintes pour la table `ouvrir`
+--
+ALTER TABLE `ouvrir`
+  ADD CONSTRAINT `FK_6A47F013FC91C3A0` FOREIGN KEY (`id_jour_id`) REFERENCES `jours` (`id`),
+  ADD CONSTRAINT `FK_6A47F013FCFA10B` FOREIGN KEY (`id_restaurant_id`) REFERENCES `restaurant` (`id`);
+
+--
+-- Contraintes pour la table `restaurant_categories`
+--
+ALTER TABLE `restaurant_categories`
+  ADD CONSTRAINT `FK_9FC96659A21214B7` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_9FC96659B1E7706E` FOREIGN KEY (`restaurant_id`) REFERENCES `restaurant` (`id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

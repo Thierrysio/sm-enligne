@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="{{asset('build/css/index.2.css')}}">
+  </head>
+<script>
+  window.intercomSettings = {
+    app_id: "s59n42jc"
+  };
+</script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/s59n42jc';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+<body>
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+    <nav class="navbar   fixed-top  m-0 py-0" >
+     <ul class="navbar-nav    text-primary ">
+                    <li class="nav-item text-center">
+                           <a class=" btn   mx-auto text-primary "  id="le_lien"> <img src="{{asset('build/images/logocentre.png')}}"></a>  
+                       
+                    </li>
+    </ul> 
+    <ul class="navbar-nav mx-auto  text-primary ">
+                    <li class="nav-item text-center">
+                        
+                    </li>
+    </ul> 
+        <ul class="navbar-nav   text-primary ">
+                    <li class="nav-item text-center">
+                        <a class=" btn   mx-auto text-primary" href="/inscription" id="le_lien"> <img src="{{asset('build/images/sinscrire.png')}}"></a>  
+                    </li>
+                    
+    </ul> 
+     <ul class="navbar-nav   text-primary ">
+                    <li class="nav-item text-center">
+                        <a class=" btn    mx-auto text-primary" href="/connexion" id="le_lien"> <img src="{{asset('build/images/connexion.png')}}"></a>  
+                    </li>
+                    
+    </ul> 
+     
+  </nav>
+<div class="py-5 text-center text-white h-100 align-items-center d-flex" style=" 
+     
+     background-image: linear-gradient(to bottom, 
+     rgba(0, 0, 0, .50), rgba(0, 0, 0, .50)), url({{asset('build/images/cafepenche.png')}});  
+     background-position: center center, center center;  
+     background-repeat: repeat, repeat;">
+    <div class="container py-5">
+      <div class="row">
+           {{form_start(form)}}
+        <p class=" text-index40 text-center">SAUCE MOUTARD </p>
+            <p class=" text-secondary  text-center">Le bien-être au café</p>
+            <p class=" text-secondary text-center">Travaillez dans des lieux inspirants dans 19 villes de France en profitant de Wifi et de bons produits. Le tout pour seulement 9.90€/mois</p>
+        
+            <p class=" text-secondary  text-center"><br></p>
+        
+        <div class="mx-auto col-lg-8 col-md-10">
+            <div class="py-1">
+    <div class="container">
+      <div class="row   text-index text-left " >
+          <div class="col-4">Je veux</div>
+        <div class="col-8">{{ form_row(form.cat) }}</div>
+      </div>
+    </div>
+  </div>
+      
+      <div class="py-1">
+    <div class="container">
+      <div class="row   text-index text-left " >
+          <div class="col-4">à</div>
+        <div class="col-8">{{ form_row(form.rest) }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="py-1">
+    <div class="container">
+      <div class="row text-right" >
+        <div class="col-md-12"><button class="btn btn-primary text-secondary" type="submit" >Jetez un coup d'oeil</button></div>
+        
+      </div>
+    </div>
+  </div>      
+      </div>
+    </div>
+  </div>
+      
+      {{form_end(form)}}
+  <div class="py-3">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 class="text-primary text-center">NOTRE SAUCE SECRETE</h1>
+          <div class="row">
+            <div class="col-6 text-center">
+                <img class="" src="{{asset('build/images/Tilda_Icons_7cafe_map.png')}}">
+                 <div class="col-12  text-secondarynoir text-center"> 
+                     <FONT COLOR="#FDD02F">60</FONT> espaces de travail dans <FONT COLOR="#FDD02F">19</FONT> villes en France avec <FONT COLOR="#FDD02F">un</FONT> seul abonnement
+                 </div>
+            </div>
+            <div class="col-6 text-center">
+                <img class="" src="{{asset('build/images/Tilda_Icons_7cafe_wifi.png')}}">
+                <div class="col-12  text-secondarynoir text-center"> 
+                     Du <FONT COLOR="#FDD02F">Wifi</FONT>, des <FONT COLOR="#FDD02F">prises</FONT>, du <FONT COLOR="#FDD02F">confort</FONT> : toutes les conditions idéales pour travailler.
+                 </div>
+            </div>
+            <div class="col-6 text-center"><img class="" src="{{asset('build/images/Tilda_Icons_9ta_group.png')}}">
+            <div class="col-12  text-secondarynoir text-center"> 
+                     Trouvez des <FONT COLOR="#FDD02F">milliers</FONT> de nomades avec qui travailler
+                 </div>
+            </div>
+            <div class="col-6 text-center"><img class=" " src="{{asset('build/images/Tilda_Icons_9ta_discount.png')}}">
+            <div class="col-12  text-secondarynoir text-center"> 
+                     <FONT COLOR="#FDD02F">30%</FONT> de réduction en moyenne sur les meilleurs <FONT COLOR="#FDD02F">boissons</FONT> & <FONT COLOR="#FDD02F">nourritures</FONT> de France
+                 </div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 text-center text-white h-100 align-items-center d-flex" style=" 
+     
+     background-image: linear-gradient(to bottom, 
+     rgba(0, 0, 0, .50), rgba(0, 0, 0, .50)), url({{asset('build/images/cafepenche.png')}});  
+     background-position: center center, center center;  
+     background-repeat: repeat, repeat;">
+    <div class="container py-5">
+      <div class="row">
+        <div class="mx-auto col-lg-8 col-md-10">
+            <p class=" text-index40 text-center">L'ABONNEMENT </p>
+            <p class=" text-secondary  text-center">Pour ne pas être mangé à n'importe quelle sauce</p>
+            <p class=" text-index40 text-center">9.90€/MOIS</p>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+           <h1 class="text-primary text-center">NOTRE SAUCE ENTREPRISE</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="py-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+           <h1 class="text-secondarynoir text-center">Améliorez le bien-être de vos employés en dehors de vos locaux</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+            <div class="col-6 text-center"><img src="{{asset('build/images/Tilda_Icons_10cw_startup.png')}}">
+            <div class="col-12  text-secondarynoir text-center"> 
+                     Améliorez la productivité de vos salariés en leur proposant des bureaux atypiques
+                 </div></div>
+            <div class="col-6 text-center"><img src="{{asset('build/images/Tilda_Icons_9ta_smile.png')}}">
+            <div class="col-12  text-secondarynoir text-center"> 
+                   Contribuez au bien-être de vos employés en dehors des murs de votre entreprise  
+                 </div></div>
+            <div class="col-6 text-center"><img src="{{asset('build/images/Tilda_Icons_9ta_medal.png')}}">
+            <div class="col-12  text-secondarynoir text-center"> 
+                     Donnez un plus à votre marque employeur et récompensez vos salariés
+                 </div></div>
+            <div class="col-6 text-center"><img src="{{asset('build/images/Tilda_Icons_9ta_moneybox.png')}}">
+            <div class="col-12  text-secondarynoir text-center"> 
+                   Optimisez votre parc immobilier avec un service complémentaire et très compétitif  
+                 </div></div>
+  </div>
+            
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center" ><a class="btn btn-primary" href="mailto:hello@saucemoutard.com">Prendre un café </a></div>
+      </div>
+    </div>
+  </div>
+            
+ 
+  <footer class="page-footer font-small special-color-dark pt-4">
+
+      <div class="py-1 
+              ">
+    <div class="container bg-primary ">
+      <div class="py-1
+              ">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="text-center text-index40">VOUS ÊTES RESTAURATEUR ?</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-1">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p class="lead text-secondary">Vous proposez de bons produits tout au long de la journée, vous avez votre univers et souhaitez le partager ?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+      
+      <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center" ><a class="btn btn-primary text-primary" href="mailto:hello@saucemoutard.com">hello@saucemoutard.com </a></div>
+      </div>
+    </div>
+  </div>
+    <!-- Footer Elements -->
+    <div class="container">
+
+      <!-- Social buttons -->
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+         <img class="img-fluid d-block" src="{{asset('build/images/stationf.png')}}"> 
+        </li>
+        <li class="list-inline-item">
+         <img class="img-fluid d-block" src="{{asset('build/images/instagram-logo.png')}}">    
+        </li>
+        <li class="list-inline-item">
+        <img class="img-fluid d-block" src="{{asset('build/images/facebook-logo-button.png')}}">  
+        </li>
+        <li class="list-inline-item">
+        <img class="img-fluid d-block" src="{{asset('build/images/logo-startuplab.png')}}">  
+        </li>
+       
+      </ul>
+      <!-- Social buttons -->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <nav class="navbar navbar-expand ">
+    <div class="collapse navbar-collapse  justify-content-center" id="navbarSupportedContent">
+      <div class="container text-success">
+        <div class="row justify-content-center">
+          <div class=" text-center col-2">
+            <a href="/cgu" class="nav-link  text-primary" style = "font-family: 'Oswald', sans-serif;
+    font-size: 11px;">CGU</a>
+          </div>
+          <div class=" text-center col-4">
+            <a href="/ml" class="nav-link  text-primary" style = "font-family: 'Oswald', sans-serif;
+    font-size: 11px;">Mentions Légales</a>
+          </div>
+          <div class=" text-center col-2">
+            <a href="/cgv" class="nav-link text-primary" style = "font-family: 'Oswald', sans-serif;
+    font-size: 11px;">CGV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  </footer>          
+            
+            
+  </body>
+
+</html>

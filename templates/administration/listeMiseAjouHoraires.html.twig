@@ -1,0 +1,61 @@
+{# empty Twig template #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/index.2e529fc4.css')}}">{% endblock %}
+    </head>
+    <body>
+        {% block body %}
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="display-5 mb-5 text-primary text-center">Gestion des horaires du restaurant <a href="/gestion1ListeRestaurants"><img class="" src="{{asset('build/images/retour.png')}}"></a></p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 filter-fade-in filter-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="text-dark text-left">Jour </th>
+                <th class="text-dark text-left">Ouverture </th>
+                <th class="text-dark text-left">Fermeture </th>
+                <th class="text-dark text-right">Mettre a jour</th>
+                <th class="text-dark text-right">Supprimer</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+                {% for lhoraire in horaires %}
+              <tr>
+                <td class="text-secondary text-left">{{ lhoraire.jour }}</td>
+                <td class="text-secondary text-left">{{ lhoraire.heure_debut|date('H:i') }}</td>
+                <td class="text-secondary text-left">{{ lhoraire.heure_fin|date('H:i') }}</td>
+                <td><a href="/gestionOuvrir/{{lhoraire.id}}/edit"><img class="img-fluid d-block float-right" src="{{asset('build/images/crayon30.png')}}"></a></td>
+             
+                <td><a href="/removeOuvrir/{{lhoraire.id}}"><img class="img-fluid d-block float-right" src="{{asset('build/images/crayon30.png')}}"></a></td>
+             
+                
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+            
+            
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
+{# empty Twig template #}

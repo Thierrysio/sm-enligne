@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/carte.fe31f41a.css')}}">{% endblock %}
+    </head>
+    <body>
+                {% form_theme form 'bootstrap_4_layout.html.twig' %}
+        {% block body %}
+     <nav class="navbar  bg-primary    m-0 py-0" >
+     <ul class="navbar-nav    text-primary ">
+                    <li class="nav-item text-center">
+                        <a  href="javascript:history.back()"><img src="{{asset('build/images/retour-blanc.png')}}"></a>
+                    </li>
+    </ul> 
+    <ul class="navbar-nav mx-auto  text-primary ">
+                    <li class="nav-item text-center">
+                        <a class="nav-link    bg-primary  text-secondary" href="/carte">SAUCE MOUTARD</a>
+                    </li>
+    </ul> 
+ 
+     
+  </nav>
+ <div class="py-1 text-center">
+    <div class="container-fluid"> 
+    
+        
+      <div class="row">
+        <div class="col-12" >
+          <br>
+         <img   src="{{asset('build/images/logojaunedetoure120.png')}}" >      
+         
+         </div></div></div></div>
+  <div class="py-5 text-center bg-white text-primary" >
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mx-auto border">
+          <h1 class="mb-4">Photo</h1>
+        
+          <h6 class="text-justify "> </h6>
+          
+        {{form_start(form)}}
+        
+        {{ form_widget(form.photo) }}
+  
+        <button type="submit" class="btn-success" >envoyer</button>
+        
+        {{form_end(form)}}
+    </div>
+      </div>
+    </div>
+  </div>
+        {% endblock %}
+        {% block javascripts %}<script src="{{asset('build/js/app.js')}}"></script>{% endblock %}
+        
+    </body>
+</html>
+{# empty Twig template #}
+{# empty Twig template #}

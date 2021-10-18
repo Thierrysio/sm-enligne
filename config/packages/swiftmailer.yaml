@@ -1,0 +1,11 @@
+swiftmailer:
+    transport: smtp
+    #auth_mode: login
+    port: 587
+    host: ssl0.ovh.net
+    username: support@saucemoutard.ovh
+    password: saucemoutard22610#
+    spool: { type: 'memory' }
+    
+    
+    

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/index.2e529fc4.css')}}">{% endblock %}
+    </head>
+    <body>
+        {% block body %}
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="display-5 mb-5 text-primary text-center">Gestion des categories du restaurant <a href="/tbsaucemoutard"><img class="" src="{{asset('build/images/retour.png')}}"></a></p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 filter-fade-in filter-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="text-dark text-left">Categorie </th>
+                <th class="text-dark text-right">Mettre a jour</th>
+                <th class="text-dark text-right">Supprimer</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+                {% for lacategorie in categories %}
+              <tr>
+                <td class="text-secondary text-left">{{ lacategorie.nom }}</td>
+             
+                <td><a href="/gestionCategories/{{lacategorie.id}}/edit"><img class="img-fluid d-block float-right" src="{{asset('build/images/crayon30.png')}}"></a></td>
+             
+                <td><a href="/removeCategories/{{lacategorie.id}}"><img class="img-fluid d-block float-right" src="{{asset('build/images/crayon30.png')}}"></a></td>
+             
+                
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+            
+            
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
+{# empty Twig template #}

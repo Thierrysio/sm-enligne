@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <title>{% block title %}Sauce moutard{% endblock %}</title>
+        {% block stylesheets %}  <link rel="stylesheet" href="{{asset('build/css/index.css')}}">
+{% endblock %}
+    </head>
+<script>
+  window.intercomSettings = {
+    app_id: "s59n42jc"
+  };
+</script>
+
+<style type="text/css">
+			#message{cursor:pointer}
+		</style>
+    <body>
+        {% block body %}
+            
+            <div class="py-1 text-center">
+    <div class="container-fluid"> 
+    
+        
+      <div class="row">
+        <div class="col-12" >
+          <p ><a class="nav-link mx-auto text-primary" href="/">SAUCE MOUTARD</a></p>
+          <br>
+          <h6 class=" text-secondary mx-auto ">{{  app.session.get('erreur') }}</h6>
+          <br>
+         <img   src="{{asset('build/images/logojaunedetoure120.png')}}" >      
+         
+         </div></div>
+             <div class="container p-5"> 
+
+        <form action="{{path('security_login')}}" method="post">
+  <div class="form-group  p-0">
+    <label class=" text-primary text-center" for="exampleInputEmail1">Identifiant</label>
+    <input type="text" id="moi" class="form-control" name="_username" aria-describedby="emailHelp" placeholder="entrez votre identifiant"> 
+  </div>
+  <p id="message" class="lead text-left text-secondary" contenteditable="true" onclick="rt()" >Mot de passe oublié</p>
+  <div class="form-group  p-0">
+    <label class=" text-primary text-center" for="exampleInputPassword1">Mot de passe</label>
+    <input type="password" class="form-control" name="_password" placeholder="entrez votre mot de passe">
+  </div>
+    
+  <div class="  text-center  p-0"> 
+          
+     
+                <button type="submit" class="btn btn-outline-primary">J'envoie la sauce</button>
+             </form>
+  </div>
+          </div>
+         </div>       
+         </div>  
+        {% endblock %}
+        {% block javascripts %}
+         <script>
+        function rt()  {
+            var x = "/mdpo/" + document.getElementById("moi").value;
+            if (document.getElementById("moi").value !="")
+            {
+            window.location.assign(x);
+            }
+            else
+            {
+             window.location.assign("/connexion");  
+            }
+            
+        }
+        </script>
+        {% endblock %}
+    </body>
+</html>
+{# empty Twig template #}

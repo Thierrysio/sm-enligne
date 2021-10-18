@@ -1,0 +1,31 @@
+<script>
+ 
+  var x;   
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition,errorCallback);
+        
+    } else {
+       window.location.assign("/listesl");
+    }
+ 
+function showPosition(position) {
+    
+   return window.location.assign("/liste/"+position.coords.latitude+"/"+position.coords.longitude);
+}   
+
+function errorCallback(error){
+    switch(error.code){
+        case error.PERMISSION_DENIED:
+            window.location.assign("/listesl");
+            break;          
+        case error.POSITION_UNAVAILABLE:
+           window.location.assign("/listesl");
+            break;
+        case error.TIMEOUT:
+            window.location.assign("/listesl");
+            break;
+        }
+};
+   
+ 
+</script>

@@ -1,0 +1,41 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26 juil. 2018, 09:07:07
+    Author     : thierry28220
+*/
+
+
+ 
+
+            .gm-style-iw {
+    max-height: 120px !important;
+    max-width:120px !important;
+    overflow: auto !important;
+         }  
+ 
+
+#map {
+        height: 100%;
+      }
+      
+ 
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+             .footer {
+    position: absolute;
+    margin: auto;
+    bottom: 5;
+    width: 100%;
+    height: 40px;
+   
+}
+       

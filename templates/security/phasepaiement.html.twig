@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}<link rel="stylesheet" href="{{asset('build/css/creationRestaurant.66df981e.css')}}">{% endblock %}
+    </head>
+<script>
+  window.intercomSettings = {
+    app_id: "s59n42jc"
+  };
+</script>
+    <body>
+        {% form_theme form 'bootstrap_4_layout.html.twig' %}
+        {% block body %}
+ <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="text-center col-12 text-primary">
+          <h1>Abonnement Sauce Moutard</h1>
+        </div>
+      </div>
+      <div class="row text-secondary">
+        <div class="col-12 p-3" >
+          <div class="card bg-primary">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col-5">
+                  <h4 class="mb-0">0€ le premier mois</h4>
+                </div>
+                <div class="col-7 text-right">
+                  <h2 class="mb-0"> <b>puis 9.90 €/mois</b> </h2>
+                </div>
+              </div>
+              <p class="my-3">Enfin un service qui vous correspond...</p>
+              <ul class="pl-3">
+                 <li>1 mois GRATUIT pour nous apprécier : Désengagement possible à tout moment en envoyant un mail sur hello@saucemoutard.com</li>
+                <li>Sans désengagement de votre part, à la fin de votre mois d'essai, vous serez débité(e)  de 9.90 € chaque mois.</li>
+                <li>Un service client exceptionnel à votre écoute !</li>
+                <li>Tout est sécurisé... Promis</li>
+              </ul>         {{form_start(form)}}
+        {{form_widget(form)}}
+        <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_live_yAtMRiE8LKTKde1AQqiOomYB"
+    data-amount="0"
+    data-name="MOUTARD SAS"
+    data-description="une nouvelle expérience"
+    data-image="{{asset('build/images/logojaunedetoure120.png')}}"
+    data-locale="auto"
+    data-currency="eur">
+  </script>
+         
+        {{form_end(form)}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
+
+
